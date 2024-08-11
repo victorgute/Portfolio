@@ -1,0 +1,167 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o vídeo de fundo */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca o vídeo atrás de todo o conteúdo */
+    object-fit: cover; /* Ajusta o vídeo para cobrir o contêiner sem distorcer */
+    transform: scale(1.1); /* Reduz o zoom do vídeo (ajuste o valor conforme necessário) */
+    transform-origin: center; /* Mantém o centro do vídeo no centro do contêiner */
+}
+
+/* Estilo para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden; /* Evita rolagem */
+}
+
+/* Estilo para o contêiner central */
+.container {
+    text-align: center;
+}
+
+/* Estilo para a logo */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-part {
+    font-size: 1.5rem;
+    color: #fff; /* Muda para branco para contrastar com o fundo */
+}
+
+.logo-dev {
+    margin-left: 5px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+/* Estilo para o nome */
+.name {
+    font-size: 3rem;
+    color: #fff; /* Muda para branco para contrastar com o fundo */
+    margin-bottom: 0.5rem;
+}
+
+/* Estilo para a parte do sobrenome no nome */
+.name span {
+    color: #007BFF;
+}
+
+/* Estilo para a descrição */
+.animated-title {
+    font-size: 1.5rem;
+    color: #fff; /* Muda para branco para contrastar com o fundo */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Estilo para o menu container */
+.menu-container {
+    position: fixed;
+    top: 20px; /* Espaçamento do topo */
+    right: 20px; /* Espaçamento da direita */
+    z-index: 2; /* Garante que o menu esteja sobre o conteúdo */
+}
+
+.menu-icon {
+    font-size: 2rem;
+    color: #fff; /* Cor branca para o ícone */
+    cursor: pointer;
+}
+
+/* Estilo para o menu */
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fundo escuro com opacidade */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1; /* Garante que o menu esteja abaixo do botão de fechar */
+    overflow: hidden;
+}
+
+/* Mostra o menu quando a classe menu-active é adicionada */
+.menu-active {
+    transform: translateX(0);
+}
+
+/* Estilo para o botão de fechar */
+.menu-close {
+    position: absolute;
+    top: 20px; /* Espaçamento do topo */
+    right: 20px; /* Espaçamento da direita */
+    font-size: 2rem;
+    color: #fff; /* Cor branca para o ícone */
+    cursor: pointer;
+}
+
+/* Estilo para os itens do menu */
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu ul li a {
+    color: #fff; /* Cor branca para os links */
+    font-size: 2rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease; /* Animação suave para cor e transformação */
+}
+
+.menu ul li a:hover {
+    color: #007BFF; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho do texto ao passar o mouse */
+}
+
+/* Estilo para a seção de ícones sociais */
+.social-icons {
+    position: absolute;
+    bottom: 20px; /* Espaçamento da parte inferior */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    display: flex;
+    gap: 20px; /* Espaçamento entre os ícones */
+}
+
+.social-icon {
+    color: #fff; /* Cor dos ícones */
+    font-size: 2rem; /* Tamanho dos ícones */
+    transition: color 0.3s ease, transform 0.3s ease; /* Animação suave para cor e transformação */
+}
+
+.social-icon:hover {
+    color: #007BFF; /* Cor ao passar o mouse */
+    transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
+}
