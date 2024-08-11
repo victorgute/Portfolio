@@ -1,0 +1,42 @@
+/* Estilo para a seção 'Sobre Mim' */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+}
+
+.about-container {
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.about-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Estilo para o ícone de volta */
+.menu-container .menu-icon {
+    font-size: 2rem;
+    color: #fff;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    cursor: pointer;
+}
