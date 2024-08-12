@@ -1,42 +1,160 @@
-/* Estilo para a seção 'Sobre Mim' */
-.about-section {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+
+/* Estilo para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 20px;
-    text-align: left;
+    margin: 0;
+    position: relative;
+    overflow: hidden; /* Evita rolagem */
 }
 
-.about-container {
-    max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+/* Estilo para o contêiner central */
+.container {
+    text-align: center;
 }
 
-.about-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+/* Estilo para a logo */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container a{
+    text-decoration: none;
+}
+
+.logo-part {
+    font-size: 1.5rem;
+    color: #fff; /* Muda para branco para contrastar com o fundo */
+}
+
+.logo-dev {
+    margin-left: 5px;
+    font-weight: bold;
     color: #007BFF;
 }
 
-.about-container p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
+.logo{
+    color: #007BFF;
 }
 
-/* Estilo para o ícone de volta */
-.menu-container .menu-icon {
-    font-size: 2rem;
-    color: #fff;
+
+/* Estilo para o nome */
+.name {
+    font-size: 3rem;
+    color: #fff; /* Muda para branco para contrastar com o fundo */
+    margin-bottom: 0.5rem;
+}
+
+/* Estilo para a parte do sobrenome no nome */
+.name span {
+    color: #007BFF;
+}
+
+/* Estilo para a descrição */
+.animated-title {
+    font-size: 1.5rem;
+    color: #fff; /* Muda para branco para contrastar com o fundo */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Estilo para o menu container */
+.menu-container {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
+    top: 20px; /* Espaçamento do topo */
+    right: 20px; /* Espaçamento da direita */
+    z-index: 2; /* Garante que o menu esteja sobre o conteúdo */
+}
+
+.menu-icon {
+    font-size: 2rem;
+    color: #fff; /* Cor branca para o ícone */
     cursor: pointer;
+}
+
+/* Estilo para o menu */
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fundo escuro com opacidade */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1; /* Garante que o menu esteja abaixo do botão de fechar */
+    overflow: hidden;
+}
+
+/* Mostra o menu quando a classe menu-active é adicionada */
+.menu-active {
+    transform: translateX(0);
+}
+
+/* Estilo para o botão de fechar */
+.menu-close {
+    position: absolute;
+    top: 20px; /* Espaçamento do topo */
+    right: 20px; /* Espaçamento da direita */
+    font-size: 2rem;
+    color: #fff; /* Cor branca para o ícone */
+    cursor: pointer;
+}
+
+/* Estilo para os itens do menu */
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu ul li a {
+    color: #fff; /* Cor branca para os links */
+    font-size: 2rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease; /* Animação suave para cor e transformação */
+}
+
+.menu ul li a:hover {
+    color: #007BFF; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho do texto ao passar o mouse */
+}
+
+
+/* Estilo para a tela de transição */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Começa fora da tela */
+    width: 100%;
+    height: 100%;
+    background-color: #007BFF; /* Cor azul com opacidade */
+    z-index: 100; /* Certifique-se de que a tela esteja sobre o conteúdo */
+    transition: left 0.7s ease; /* Animação suave para mover a tela */
+}
+
+.overlay.active {
+    left: 0; /* Move a tela para cobrir a página */
 }
