@@ -9,7 +9,11 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    overflow: hidden;
+    overflow: auto; /* Alterado de hidden para auto */
+}
+
+body span {
+    color: #007BFF;
 }
 
 .logo-container {
@@ -58,7 +62,7 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,7 +120,7 @@ body {
 
 /* About Section */
 .about-section {
-    margin-top: 50px; /* Ajusta a distância do topo */
+    margin-top: 100px; /* Ajusta a distância do topo */
     padding: 20px;
     color: white;
 }
@@ -134,17 +138,10 @@ body {
     align-items: center;
 }
 
-.about-text {
-    position: relative;
-}
-
-.about-text h1{
-    margin-right: 20.6rem;
-}
-
 .about-text p {
     font-size: 1.2rem;
     line-height: 1.6;
+    text-align: justify; /* Justifica o texto para alinhamento uniforme */
 }
 
 .about-image img {
@@ -156,13 +153,13 @@ body {
 .highlight-button {
     display: inline-block;
     padding: 10px 20px;
+    margin-right: 24rem;
     font-size: 1rem;
     color: #fff;
     background-color: #007BFF; /* Cor de destaque */
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-right: 26rem;
 }
 
 .highlight-button:hover {
@@ -174,12 +171,13 @@ body {
 .social-links {
     display: flex;
     align-items: center; /* Alinha verticalmente os ícones */
-    gap: 15px; /* Espaçamento entre os ícones */
+    margin-left: 20px; /* Espaçamento entre o botão e os ícones */
 }
 
 .social-icon {
     font-size: 1.5rem;
     color: #fff;
+    margin-right: 15px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -193,69 +191,117 @@ body {
     display: flex;
     align-items: center; /* Alinha verticalmente o botão e os ícones */
     margin-top: 20px; /* Espaçamento acima do botão e ícones */
-    gap: 20px; /* Espaçamento entre o botão e os ícones */
-}
-
-
-
-
-.about-section span{
-    color: #007BFF;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: center;
 }
 
 .about-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 100%; /* Garante que o texto não exceda a largura do contêiner */
+    position: relative;
 }
 
-.about-text p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    text-align: justify; /* Alinha o texto de forma justificada */
-    margin: 0; /* Remove a margem padrão para melhor controle do layout */
-}
-
-.about-image img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-
-
-
-/* Estilo para os ícones sociais */
 .social-links {
-    display: flex;
-    align-items: center; /* Alinha verticalmente os ícones */
-    gap: 15px; /* Espaçamento entre os ícones */
+    margin-left: 20px; /* Ajuste o espaçamento entre o botão e
+os ícones sociais */
 }
 
-.social-icon {
-    font-size: 1.5rem;
-    color: #fff;
-    transition: color 0.3s ease, transform 0.3s ease;
+/* Skills Section */
+.skills-section {
+margin: 50px 20px;
+padding: 20px;
+color: white;
 }
 
-.social-icon:hover {
-    color: #007BFF; /* Cor ao passar o mouse */
-    transform: scale(1.1); /* Leve aumento ao passar o mouse */
+.skills-section h1 {
+font-size: 3rem;
+margin-bottom: 20px;
+text-align: center;
 }
 
-/* Container para o botão e ícones sociais */
-.cta-container {
-    display: flex;
-    align-items: center; /* Alinha verticalmente o botão e os ícones */
-    margin-top: 20px; /* Espaçamento acima do botão e ícones */
-    gap: 20px; /* Espaçamento entre o botão e os ícones */
+.skills-content {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+gap: 20px;
+align-items: center;
+justify-content: center;
+}
+
+.skills-text {
+grid-column: span 2;
+}
+
+.skills-icons {
+font-size: 3rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 50px;
+transition: color 0.1s ease, transform 0.1s ease;
+}
+
+.skills-icons :hover{
+    color: #007BFF;
+    transform: scale(1.3);
+}
+
+/* Certificates Section */
+.certificates-section {
+margin: 50px 20px;
+padding: 20px;
+color: white;
+}
+
+.certificates-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.certificate-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+.certificate-item a{
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 20px;
 }
 
 
+.certificate-item img {
+max-width: 100%;
+border-radius: 10px;
+margin-bottom: 10px;
+}
+
+.certificate-item p {
+margin: 0;
+}
+
+/* Animação de rolagem */
+.fade-in {
+opacity: 0;
+transform: translateY(50px);
+}
+
+.fade-in-visible {
+opacity: 1;
+transform: translateY(0);
+transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Começa fora da tela */
+    width: 100%;
+    height: 100%;
+    background-color: #007BFF; /* Cor azul com opacidade */
+    z-index: 100; /* Certifique-se de que a tela esteja sobre o conteúdo */
+    transition: left 0.7s ease; /* Animação suave para mover a tela */
+}
+
+
+.overlay.active {
+    left: 0; /* Move a tela para cobrir a página */
+}

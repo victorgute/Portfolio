@@ -1,39 +1,37 @@
-// script.js
-document.getElementById('menu-icon').addEventListener('click', function() {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('menu-active');
-});
+document.addEventListener('DOMContentLoaded', () => {
+    // Adiciona animação de fade-in aos elementos visíveis
+    const elements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-visible');
+            } else {
+                entry.target.classList.remove('fade-in-visible');
+            }
+        });
+    }, { threshold: 0.1 });
 
-document.getElementById('menu-close').addEventListener('click', function() {
-    const menu = document.getElementById('menu');
-    menu.classList.remove('menu-active');
-});
+    elements.forEach(element => {
+        observer.observe(element);
+    });
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Funcionalidade do menu
     const menuIcon = document.getElementById('menu-icon');
     const menu = document.getElementById('menu');
     const menuClose = document.getElementById('menu-close');
 
-    menuIcon.addEventListener('click', function() {
-        menu.classList.add('active');
+    menuIcon.addEventListener('click', () => {
+        menu.classList.add('menu-active');
+        document.body.style.overflow = 'hidden'; // Desativa o scroll do body
     });
 
-    menuClose.addEventListener('click', function() {
-        menu.classList.remove('active');
+    menuClose.addEventListener('click', () => {
+        menu.classList.remove('menu-active');
+        document.body.style.overflow = 'auto'; // Ativa o scroll do body
     });
 });
 
-function animateTransition(targetUrl) {
-    const overlay = document.querySelector('.overlay');
-    overlay.classList.add('active');
-
-    // Espera o tempo da animação antes de redirecionar
-    setTimeout(() => {
-        window.location.href = targetUrl;
-    }, 700); // 700ms deve coincidir com a duração da animação
-}
-
-// ... código existente ...
 
 // Função para animar a transição e redirecionar
 function animateTransition(targetUrl) {
@@ -55,7 +53,6 @@ document.querySelectorAll('.menu-link').forEach(link => {
     });
 });
 
-// ... código existente ...
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -77,12 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(element => {
-        element.classList.add('fade-in-visible');
-    });
-});
+
+
 
 
 
