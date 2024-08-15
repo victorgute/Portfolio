@@ -1,3 +1,4 @@
+/* Global */
 * {
     margin: 0;
     padding: 0;
@@ -5,25 +6,12 @@
     background-color: black;
 }
 
-
-/* Estilo para o corpo da página */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    position: relative;
-    overflow: hidden; /* Evita rolagem */
+    overflow: hidden;
 }
 
-/* Estilo para o contêiner central */
-.container {
-    text-align: center;
-}
-
-/* Estilo para a logo */
 .logo-container {
     position: absolute;
     top: 20px;
@@ -32,13 +20,13 @@ body {
     align-items: center;
 }
 
-.logo-container a{
-    text-decoration: none;
-}
-
 .logo-part {
     font-size: 1.5rem;
-    color: #fff; /* Muda para branco para contrastar com o fundo */
+    color: #fff;
+}
+
+.logo-container a {
+    text-decoration: none;
 }
 
 .logo-dev {
@@ -47,79 +35,53 @@ body {
     color: #007BFF;
 }
 
-.logo{
+.logo {
     color: #007BFF;
 }
 
-
-/* Estilo para o nome */
-.name {
-    font-size: 3rem;
-    color: #fff; /* Muda para branco para contrastar com o fundo */
-    margin-bottom: 0.5rem;
-}
-
-/* Estilo para a parte do sobrenome no nome */
-.name span {
-    color: #007BFF;
-}
-
-/* Estilo para a descrição */
-.animated-title {
-    font-size: 1.5rem;
-    color: #fff; /* Muda para branco para contrastar com o fundo */
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-/* Estilo para o menu container */
 .menu-container {
     position: fixed;
-    top: 20px; /* Espaçamento do topo */
-    right: 20px; /* Espaçamento da direita */
-    z-index: 2; /* Garante que o menu esteja sobre o conteúdo */
+    top: 20px;
+    right: 20px;
+    z-index: 2;
 }
 
 .menu-icon {
     font-size: 2rem;
-    color: #fff; /* Cor branca para o ícone */
+    color: #fff;
     cursor: pointer;
 }
 
-/* Estilo para o menu */
 .menu {
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Fundo escuro com opacidade */
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 1; /* Garante que o menu esteja abaixo do botão de fechar */
+    z-index: 1;
     overflow: hidden;
 }
 
-/* Mostra o menu quando a classe menu-active é adicionada */
 .menu-active {
     transform: translateX(0);
 }
 
-/* Estilo para o botão de fechar */
 .menu-close {
     position: absolute;
-    top: 20px; /* Espaçamento do topo */
-    right: 20px; /* Espaçamento da direita */
+    top: 20px;
+    right: 20px;
     font-size: 2rem;
-    color: #fff; /* Cor branca para o ícone */
+    color: #fff;
     cursor: pointer;
 }
 
-/* Estilo para os itens do menu */
 .menu ul {
     list-style: none;
     padding: 0;
@@ -130,31 +92,170 @@ body {
 }
 
 .menu ul li a {
-    color: #fff; /* Cor branca para os links */
+    color: #fff;
     font-size: 2rem;
     text-decoration: none;
     display: inline-block;
-    transition: color 0.3s ease, transform 0.3s ease; /* Animação suave para cor e transformação */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .menu ul li a:hover {
+    color: #007BFF;
+    transform: scale(1.1);
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.fade-in-visible {
+    opacity: 1;
+}
+
+/* About Section */
+.about-section {
+    margin-top: 50px; /* Ajusta a distância do topo */
+    padding: 20px;
+    color: white;
+}
+
+.about-section h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-text {
+    position: relative;
+}
+
+.about-text h1{
+    margin-right: 20.6rem;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Estilo para o botão de destaque */
+.highlight-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007BFF; /* Cor de destaque */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 26rem;
+}
+
+.highlight-button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* Estilo para os ícones sociais */
+.social-links {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os ícones */
+    gap: 15px; /* Espaçamento entre os ícones */
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
     color: #007BFF; /* Cor ao passar o mouse */
-    transform: scale(1.1); /* Aumenta o tamanho do texto ao passar o mouse */
+    transform: scale(1.1); /* Leve aumento ao passar o mouse */
+}
+
+/* Container para o botão e ícones sociais */
+.cta-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o botão e os ícones */
+    margin-top: 20px; /* Espaçamento acima do botão e ícones */
+    gap: 20px; /* Espaçamento entre o botão e os ícones */
 }
 
 
-/* Estilo para a tela de transição */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: -100%; /* Começa fora da tela */
-    width: 100%;
-    height: 100%;
-    background-color: #007BFF; /* Cor azul com opacidade */
-    z-index: 100; /* Certifique-se de que a tela esteja sobre o conteúdo */
-    transition: left 0.7s ease; /* Animação suave para mover a tela */
+
+
+.about-section span{
+    color: #007BFF;
 }
 
-.overlay.active {
-    left: 0; /* Move a tela para cobrir a página */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
 }
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%; /* Garante que o texto não exceda a largura do contêiner */
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify; /* Alinha o texto de forma justificada */
+    margin: 0; /* Remove a margem padrão para melhor controle do layout */
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+
+
+
+/* Estilo para os ícones sociais */
+.social-links {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os ícones */
+    gap: 15px; /* Espaçamento entre os ícones */
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007BFF; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Leve aumento ao passar o mouse */
+}
+
+/* Container para o botão e ícones sociais */
+.cta-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o botão e os ícones */
+    margin-top: 20px; /* Espaçamento acima do botão e ícones */
+    gap: 20px; /* Espaçamento entre o botão e os ícones */
+}
+
+
