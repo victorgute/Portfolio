@@ -12,6 +12,7 @@ body {
     opacity: 1;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -114,6 +115,7 @@ header {
     transform: scale(1.1);
 }
 
+/* Overlay */
 .overlay {
     position: fixed;
     top: 0;
@@ -178,6 +180,7 @@ header {
     background-color: #007BFF;
     transform: scale(1.05);
     color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4); /* Sombra azul suave */
 }
 
 .service-card i {
@@ -207,9 +210,177 @@ header {
     text-decoration: none;
     font-size: 20px;
     cursor: pointer;
+    transition: 0.5s;
 }
 
-.botao1:hover {
+.botao1 a:hover {
+    background: white;
     color: #007BFF;
     transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4); /* Sombra azul suave */
+}
+
+/* Footer */
+.footer {
+    background-color: #000; /* Cor de fundo preta */
+    color: #fff; /* Cor do texto branca */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px 0; /* Espaçamento interno */
+    position: fixed; /* Fixa o footer na parte inferior da tela */
+    bottom: 0; /* Posiciona o footer na parte inferior */
+    width: 100%; /* Largura total */
+    font-size: 0.9rem; /* Tamanho da fonte */
+}
+
+.footer span {
+    color: #007BFF;
+}
+
+.footer p {
+    margin: 0; /* Remove a margem padrão do parágrafo */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Para dispositivos móveis */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-container {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    .menu-container {
+        top: 10px;
+        right: 10px;
+    }
+
+    .menu-icon {
+        font-size: 1.5rem;
+    }
+
+    .menu ul li {
+        margin: 15px 0;
+    }
+
+    .menu ul li a {
+        font-size: 1.5rem;
+    }
+
+    .services-section h1 {
+        font-size: 2rem;
+    }
+
+    .service-card i {
+        font-size: 2.5rem;
+    }
+
+    .botao1 a {
+        font-size: 18px;
+        padding: 0.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+        position: relative;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Para tablets e dispositivos com tela média */
+    header {
+        padding: 15px;
+    }
+
+    .logo-container {
+        position: static;
+        margin-bottom: 15px;
+    }
+
+    .menu-container {
+        top: 15px;
+        right: 15px;
+    }
+
+    .menu-icon {
+        font-size: 1.75rem;
+    }
+
+    .menu ul li {
+        margin: 20px 0;
+    }
+
+    .menu ul li a {
+        font-size: 1.75rem;
+    }
+
+    .services-section h1 {
+        font-size: 2.25rem;
+    }
+
+    .service-card i {
+        font-size: 2.75rem;
+    }
+
+    .botao1 a {
+        font-size: 19px;
+        padding: 0.9rem;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+        position: relative;
+    }
+}
+
+@media (min-width: 1025px) {
+    /* Para dispositivos de desktop */
+    header {
+        padding: 20px;
+    }
+
+    .logo-container {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .menu-container {
+        top: 20px;
+        right: 20px;
+    }
+
+    .menu-icon {
+        font-size: 2rem;
+    }
+
+    .menu ul li {
+        margin: 20px 0;
+    }
+
+    .menu ul li a {
+        font-size: 2rem;
+    }
+
+    .services-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .service-card i {
+        font-size: 3rem;
+    }
+
+    .botao1 a {
+        font-size: 20px;
+        padding: 1rem;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+        position: relative;
+    }
 }

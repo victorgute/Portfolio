@@ -1,24 +1,9 @@
 /* Reset básico para garantir consistência entre navegadores */
-/* Estilo para o vídeo de fundo */
-#background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Coloca o vídeo atrás de todo o conteúdo */
-    object-fit: cover; /* Ajusta o vídeo para cobrir o contêiner sem distorcer */
-    transform: scale(1.1); /* Reduz o zoom do vídeo (ajuste o valor conforme necessário) */
-    transform-origin: center; /* Mantém o centro do vídeo no centro do contêiner */
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-
 
 /* Estilo para o corpo da página */
 body {
@@ -30,6 +15,19 @@ body {
     margin: 0;
     position: relative;
     overflow: hidden; /* Evita rolagem */
+}
+
+/* Estilo para o vídeo de fundo */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca o vídeo atrás de todo o conteúdo */
+    object-fit: cover; /* Ajusta o vídeo para cobrir o contêiner sem distorcer */
+    transform: scale(1.1); /* Reduz o zoom do vídeo (ajuste o valor conforme necessário) */
+    transform-origin: center; /* Mantém o centro do vídeo no centro do contêiner */
 }
 
 /* Estilo para o contêiner central */
@@ -155,6 +153,7 @@ body {
     transform: translateX(-50%); /* Centraliza horizontalmente */
     display: flex;
     gap: 20px; /* Espaçamento entre os ícones */
+    cursor: pointer;
 }
 
 .social-icon {
@@ -167,8 +166,6 @@ body {
     color: #007BFF; /* Cor ao passar o mouse */
     transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
 }
-
-/* ... código existente ... */
 
 /* Estilo para a tela de transição */
 .overlay {
@@ -184,4 +181,109 @@ body {
 
 .overlay.active {
     left: 0; /* Move a tela para cobrir a página */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Ajustes para dispositivos móveis */
+    .name {
+        font-size: 2rem;
+    }
+
+    .animated-title {
+        font-size: 1.25rem;
+    }
+
+    .menu-icon {
+        font-size: 1.5rem;
+    }
+
+    .menu ul li {
+        margin: 15px 0;
+    }
+
+    .menu ul li a {
+        font-size: 1.5rem;
+    }
+
+    .social-icons {
+        bottom: 10px;
+        gap: 15px;
+    }
+
+    .social-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Ajustes para tablets e dispositivos com tela média */
+
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .animated-title {
+        font-size: 1.35rem;
+    }
+
+    .menu-icon {
+        font-size: 1.75rem;
+    }
+
+    .menu ul li {
+        margin: 20px 0;
+    }
+
+    .menu ul li a {
+        font-size: 1.75rem;
+    }
+
+    .social-icons {
+        bottom: 15px;
+        gap: 18px;
+    }
+
+    .social-icon {
+        font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    /* Ajustes para dispositivos de desktop */
+    .logo-container {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .name {
+        font-size: 3rem;
+    }
+
+    .animated-title {
+        font-size: 1.5rem;
+    }
+
+    .menu-icon {
+        font-size: 2rem;
+    }
+
+    .menu ul li {
+        margin: 20px 0;
+    }
+
+    .menu ul li a {
+        font-size: 2rem;
+    }
+
+    .social-icons {
+        bottom: 20px;
+        gap: 20px;
+    }
+
+    .social-icon {
+        font-size: 2rem;
+    }
 }
