@@ -286,4 +286,8 @@ body {
     .social-icon {
         font-size: 2rem;
     }
+
+    .social-icons{
+        position: fixed;
+    }
 }
