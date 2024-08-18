@@ -6,33 +6,40 @@
     transition: all 0.3s ease; /* Adiciona uma transição padrão para todos os elementos */
 }
 
+/* Animação fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px); /* Adiciona um leve deslocamento para baixo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move para a posição original */
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Animação de fade-in com transição mais forte */
+}
+
 body {
     font-family: Arial, sans-serif;
     color: #fff;
     background-color: #000;
-    opacity: 0; /* Inicia com a página invisível */
-    animation: fadeIn 1s forwards; /* Animação de fade-in */
+    opacity: 1; /* Torna a página visível */
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.logo-container a{
+.logo-container a {
     text-decoration: none;
     color: white;
 }
 
-.logo-container span{
+.logo-container span {
     color: #007BFF;
 }
 
-
+/* Header (Navbar) */
 .header {
     display: flex;
     justify-content: space-between;
@@ -41,18 +48,34 @@ body {
     background-color: #000;
     width: 100%;
     z-index: 10;
-    animation: slideDown 0.5s ease-in-out; /* Animação de deslizamento */
 }
 
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+/* Ajustes para navbar */
+.header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo-container .logo-part {
+    font-size: 1.5rem; /* Ajuste o tamanho do texto do logo */
+    margin-right: 10px; /* Espaço entre os elementos do logo */
+}
+
+.header .logo-container .logo-dev {
+    font-size: 1.5rem; /* Ajuste o tamanho do texto do logo */
+}
+
+.menu-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.menu-icon {
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
 }
 
 .menu {
@@ -67,15 +90,13 @@ body {
     align-items: center;
     justify-content: center;
     transform: translateX(100%);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease;
     z-index: 1;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards; /* Animação de fade-in para o menu */
+    overflow: hidden;
 }
 
 .menu-active {
     transform: translateX(0);
-    opacity: 1;
 }
 
 .menu-close {
@@ -111,28 +132,23 @@ body {
 
 /* Projects Section */
 .projects-section {
-    padding: 80px 20px;
+    padding: 50px 20px;
     text-align: center;
-    opacity: 0;
-    animation: fadeIn 1s forwards 0.5s; /* Animação de fade-in com atraso */
+}
+
+.projects-section h1 {
+    font-size: 2rem;
+}
+
+.projects-section span {
+    color: #007BFF;
 }
 
 .projects-grid {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    opacity: 0;
-    animation: fadeIn 1s forwards 1s; /* Animação de fade-in com atraso */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    margin-top: 1rem;
 }
 
 .project-card {
@@ -148,18 +164,7 @@ body {
     width: 300px; /* Ajuste a largura do card conforme necessário */
     height: 450px; /* Ajuste a altura do card conforme necessário */
     opacity: 0;
-    animation: fadeInUp 0.5s forwards; /* Animação de fade-in para cima */
-}
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    animation: fadeIn 3s forwards; /* Animação de fade-in mais visível */
 }
 
 .project-card img {
@@ -216,4 +221,20 @@ body {
 .view-more:hover {
     background-color: #0056b3;
     transform: scale(1.1);
+}
+
+/* Estilo para a tela de transição */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Começa fora da tela */
+    width: 100%;
+    height: 100%;
+    background-color: #007BFF; /* Cor azul com opacidade */
+    z-index: 100; /* Certifique-se de que a tela esteja sobre o conteúdo */
+    transition: left 0.7s ease; /* Animação suave para mover a tela */
+}
+
+.overlay.active {
+    left: 0; /* Move a tela para cobrir a página */
 }
