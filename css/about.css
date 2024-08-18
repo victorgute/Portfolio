@@ -337,6 +337,11 @@ body span {
     text-align: center;
 }
 
+::selection {
+    background-color: #007BFF; /* Cor de fundo quando o texto é selecionado */
+    color: #fff; /* Cor do texto quando é selecionado */
+}
+
 .cv-container h2 {
     font-size: 2rem;
     margin-bottom: 10px;

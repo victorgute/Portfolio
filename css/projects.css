@@ -5,6 +5,10 @@
     box-sizing: border-box;
     transition: all 0.3s ease; /* Adiciona uma transição padrão para todos os elementos */
 }
+::selection {
+    background-color: #007BFF; /* Cor de fundo quando o texto é selecionado */
+    color: #fff; /* Cor do texto quando é selecionado */
+}
 
 /* Animação fade-in */
 @keyframes fadeIn {

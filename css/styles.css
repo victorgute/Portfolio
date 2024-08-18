@@ -183,6 +183,11 @@ body {
     left: 0; /* Move a tela para cobrir a página */
 }
 
+::selection {
+    background-color: #007BFF; /* Cor de fundo quando o texto é selecionado */
+    color: #fff; /* Cor do texto quando é selecionado */
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     /* Ajustes para dispositivos móveis */

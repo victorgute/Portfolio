@@ -211,6 +211,7 @@ header {
     font-size: 20px;
     cursor: pointer;
     transition: 0.5s;
+    margin-bottom: 2rem;
 }
 
 .botao1 a:hover {
@@ -226,10 +227,13 @@ header {
     color: #fff; /* Cor do texto branca */
     text-align: center; /* Centraliza o texto */
     padding: 10px 0; /* Espaçamento interno */
-    position: fixed; /* Fixa o footer na parte inferior da tela */
     bottom: 0; /* Posiciona o footer na parte inferior */
     width: 100%; /* Largura total */
     font-size: 0.9rem; /* Tamanho da fonte */
+}
+::selection {
+    background-color: #007BFF; /* Cor de fundo quando o texto é selecionado */
+    color: #fff; /* Cor do texto quando é selecionado */
 }
 
 .footer span {

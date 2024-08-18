@@ -198,6 +198,11 @@ body {
     transition: transform 0.5s ease, background-color 0.3s ease;
 }
 
+.contact-item a{
+    text-decoration: none;
+    color: #fff;
+}
+
 .contact-item:hover {
     transform: scale(1.05);
     background-color: #007BFF;
@@ -250,6 +255,11 @@ body {
 
 .footer p {
     margin: 0; /* Remove a margem padrão do parágrafo */
+}
+
+::selection {
+    background-color: #007BFF; /* Cor de fundo quando o texto é selecionado */
+    color: #fff; /* Cor do texto quando é selecionado */
 }
 
 @media (min-width: 768px) {
